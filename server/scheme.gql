@@ -1,0 +1,17 @@
+# // Define the GraphQL schema
+type Todo {
+  id: ID!
+  title: String!
+  completed: Boolean!
+}
+
+type Query {
+  todos: [Todo!]!
+}
+
+type Mutation {
+  addTodo(title: String!): Todo!
+  markTodoAsCompleted(id: ID!): Todo!
+  markTodoAsUncompleted(id: ID!): Todo!
+  deleteTodo(id: ID!): ID!
+}
